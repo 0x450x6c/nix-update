@@ -130,7 +130,7 @@ def nix_prefetch(opts: Options, attr: str) -> str:
         stderr = res.stderr.strip()
         # got:    xxx
         # expected 'xxx' but got 'xxx'
-        regex = re.compile(r".*got:?\s*'?([^']*)('|$)")
+        regex = re.compile(r".*got:?\s+'?([^']*)('|$)")
         got = ""
         for line in stderr.split("\n"):
             if match := regex.fullmatch(line):
